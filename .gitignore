@@ -23,5 +23,7 @@
 hs_err_pid*
 
 #IntelliJ
-.idea
-.xml
+*.idea
+*.xml
+*.mf
+*.iml
