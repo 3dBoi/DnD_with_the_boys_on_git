@@ -29,7 +29,7 @@ public class EquipmentCard extends ItemCard {
 
     public double getDefence() {
         return defence;
-    }
+
 
     public void setDefence(double defence) {
         this.defence = defence;
