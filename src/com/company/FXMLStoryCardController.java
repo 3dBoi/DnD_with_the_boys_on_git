@@ -69,8 +69,32 @@ public class FXMLStoryCardController implements Initializable {
         case EQUIPMENTCARD:
                 break;
     }
-    
+
     }
+
+    @FXML private void handleButtonOptB(ActionEvent event) throws FileNotFoundException, IOException {
+
+
+        switch (checkEventsB()){
+
+        case STORYCARD:
+            //Hier wird später aus der Queue entnommen
+            MainStoryCard newCard = new MainStoryCard(0, null, null, null, null, null);
+            update(newCard);
+            break;
+
+        case ENCOUNTERCARD:
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLCombat.fxml"));
+            storyCardPane.getChildren().setAll(pane);
+            break;
+
+        case ITEMCARD:
+            AnchorPane paneEQC = FXMLLoader.load(getClass().getResource("FXMLItemCard.fxml"));
+            storyCardPane.getChildren().setAll(paneEQC);
+            break;
+    }
+
+}
     
     //Der Button "Back" wird initialisiert und das Hauptmenü wird geladen
     @FXML private void handleButtonBack(ActionEvent event) throws IOException{
@@ -80,12 +104,7 @@ public class FXMLStoryCardController implements Initializable {
     storyCardPane.getChildren().setAll(pane);
 
     }
-    
-    //Option B wird initialisiert
-    @FXML private void handleButtonOptB(ActionEvent event) throws FileNotFoundException {
-    MainStoryCard newCard = new MainStoryCard(0, null, null, null, null, null);
-    update(newCard);
-    }
+
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Die Paramter des erstellen Objekts "MainStoryCard" werden übergeben, um die Labels und Buttons upzudaten//
@@ -103,8 +122,8 @@ public class FXMLStoryCardController implements Initializable {
     
     //Die Events für die jeweiligen IDs der Karten werden hier gehandelt
     //Es wird geguckt, welcher Typ von Karte nach der jetzigen folgt
-    public CardsE checkEventsA() throws IOException{ 
-        CardsE nextCard = CardsE.STORYCARD; 
+    public CardsE checkEventsA() throws IOException{
+        CardsE nextCard = CardsE.STORYCARD;
         switch(currentID){
             case 400:
                 System.out.println(Integer.toString(currentID));
@@ -112,13 +131,30 @@ public class FXMLStoryCardController implements Initializable {
             case 300:
                 System.out.println(Integer.toString(currentID));
                 return nextIsStory(nextCard);
-            case 3: 
+            case 3:
                 System.out.println(Integer.toString(currentID));
                 return nextIsEncounter(nextCard);
 
             default: return nextCard;
         }
     }
+    public CardsE checkEventsB() throws IOException{
+        CardsE nextCard = CardsE.STORYCARD;
+        switch(currentID){
+            case 400:
+                System.out.println(currentID);
+                return nextIsItem(nextCard);
+            case 2:
+
+            case 3:
+
+
+            default: return nextCard;
+        }
+
+    }
+
+
     
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //Die Algorithmen der Story Karten sollten vielleicht in die Story Karte Klasse verlagert werden//
@@ -130,20 +166,12 @@ public class FXMLStoryCardController implements Initializable {
     public CardsE nextIsEncounter(CardsE nextCard){
         return nextCard = CardsE.ENCOUNTERCARD;
     }
-    
+
     public CardsE nextIsItem(CardsE nextCard){
-        return nextCard = CardsE.EQUIPMENTCARD;
+        return nextCard = CardsE.ITEMCARD;
     }
     
-     public void checkEventsB() throws IOException{
-    
-        switch(currentID){
-            case 2: System.out.println("Id: 2");
-            break;
-        }
-    
-    }
-    
+
      
      ////////////////////////////////////////////////
      //Das passiert, wenn die Szene aufgerufen wird//

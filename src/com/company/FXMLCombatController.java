@@ -119,7 +119,7 @@ public class FXMLCombatController implements Initializable {
                 combatPane.getChildren().setAll(pane);}
         //Die Angrifftswerte werden für die nächste Runde zurückgesetzt
         enemy.setAttack(enemy.getMaxattack());
-        player.setAttack(player.getMaxattack());
+            FXMLNameMenuController.player.setAttack(FXMLNameMenuController.player.getMaxattack());
     }
 
     //Hier werden die Consumables die momentan verwendet werden gespeichert
@@ -193,7 +193,7 @@ public class FXMLCombatController implements Initializable {
 		doEnemyMove(player, enemy, enemymove); }
     
 	if(playermove.equals(CombatMovesE.ATTACK)) {
-            enemy.setHealth(enemy.getHealth()-player.performAttack()); 
+            enemy.setHealth(enemy.getHealth()-player.performAttack());
            
        } 
         counter++;
