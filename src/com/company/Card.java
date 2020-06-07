@@ -2,15 +2,15 @@ package com.company;
 
 public class Card {
     
-    private String id;
+    private int id;
     private String name;
     
-    public Card(String id, String name){
+    public Card(int id, String name){
     this.id = id;
     this.name = name;
     }
     
-    public String getId(){
+    public int getId(){
     return id;}
 
     public String getName() {
@@ -21,7 +21,7 @@ public class Card {
         this.name = name;
     }
     
-    public void setId(String id){
+    public void setId(int id){
     this.id = id;}
    
     

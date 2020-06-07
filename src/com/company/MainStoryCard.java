@@ -12,7 +12,7 @@ public class MainStoryCard extends Card {
     String optB = null;
     
     //Konstruktor
-     public MainStoryCard(String id, String name, String main, String sub, String optA, String optB) {
+     public MainStoryCard(int id, String name, String main, String sub, String optA, String optB) {
         super(id, name);
         this.main = main;
         this.sub=sub;

@@ -2,17 +2,17 @@ package com.company;
 
 import java.util.*;
 
+
+
 public class EquipmentCard extends ItemCard {
 
-    private final int slot;
     private int attack;
     private double defence;
-   // private String name;
     private int critAdd;
+    private final SlotsE slot;
 
-    public EquipmentCard(String name,String id,int attack, double defence, int slot, int critAdd) {
+    public EquipmentCard(String name,int id,int attack, double defence, SlotsE slot, int critAdd) {
         super(id,name);
-        //this.name = name;
         this.attack = attack;
         this.defence = defence;
         this.slot = slot;
@@ -29,46 +29,37 @@ public class EquipmentCard extends ItemCard {
 
     public double getDefence() {
         return defence;
-
-
-    public void setDefence(double defence) {
-        this.defence = defence;
-
     }
 
 
+        public void setDefence ( double defence){
+            this.defence = defence;
 
-    public int getSlot(){
-        return slot;
-    }
-
-    public int getCrit(){
-        return critAdd;
-    }
-
-    public void setCritAdd(int critAdd) {
-        this.critAdd = critAdd;
-    }
-
-    public void equip(EquipmentCard Weapon) {
-        if (FXMLNameMenuController.player.Equiped[Weapon.getSlot()] != null){
-            unequip(FXMLNameMenuController.player.Equiped[Weapon.getSlot()]);
-        }
-        FXMLNameMenuController.player.Equiped[Weapon.getSlot()] = Weapon;
-        FXMLNameMenuController.player.setMaxattack(FXMLNameMenuController.player.getMaxattack() + Weapon.getAttack());
-        FXMLNameMenuController.player.setDefence(FXMLNameMenuController.player.getDefence() - Weapon.getDefence());
-        FXMLNameMenuController.player.setCrit(FXMLNameMenuController.player.getCrit()+Weapon.getCrit());
-    }
-
-    public void unequip(EquipmentCard Weapon){
-        if (FXMLNameMenuController.player.Equiped[Weapon.getSlot()] != null){
-            FXMLNameMenuController.player.setMaxattack(FXMLNameMenuController.player.getMaxattack() - Weapon.getAttack());
-            FXMLNameMenuController.player.setDefence(FXMLNameMenuController.player.getDefence() + Weapon.getDefence());
-            FXMLNameMenuController.player.setCrit(FXMLNameMenuController.player.getCrit() - Weapon.getCrit());
-            FXMLNameMenuController.player.Equiped[Weapon.getSlot()] =null;
         }
 
 
+        public SlotsE getSlot () {
+            return slot;
+        }
+
+        public int getCrit () {
+            return critAdd;
+        }
+
+        public void setCritAdd ( int critAdd){
+            this.critAdd = critAdd;
+        }
+        
+    @Override
+    public String toString(){
+    return "ID: " + getId() + "\n"+
+            "Name: " + getName() + "\n"+
+            "Slot: " + getSlot() + "\n";
     }
 
-}
+
+
+
+
+        }
+    

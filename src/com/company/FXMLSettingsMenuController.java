@@ -5,6 +5,7 @@
  */
 package com.company;
 
+import static com.company.Main.MainStoryCardsHashMap;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,6 +47,11 @@ public class FXMLSettingsMenuController implements Initializable {
              @FXML
             private void handleButton(ActionEvent event) {
                 Jukebox.select.play();
+                MainStoryCard card = MainStoryCardsHashMap.get(400);
+                int i = card.getId();
+                System.out.println(card.getId());
+                System.out.println(i);
+                
     }
     
         

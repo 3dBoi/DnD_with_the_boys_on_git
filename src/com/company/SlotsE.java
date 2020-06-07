@@ -9,10 +9,8 @@ package com.company;
  *
  * @author Janis
  */
-public class ItemCard extends Card{
+public enum SlotsE {
     
-    public ItemCard(int id, String name) {
-        super(id, name);
-    }
+    HEAD, BODY, LEGS, FEET, WEAPON
     
 }

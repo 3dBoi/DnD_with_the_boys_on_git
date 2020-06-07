@@ -41,7 +41,12 @@ public class FXMLStoryCardController implements Initializable {
     @FXML public Button buttonStoryCardBack;
     
     //Enthält die ID der aktuellen Karte, wichtig für Algorithmen
-    public static int currentID;
+    public static int currentID; 
+    
+    
+    //////Später löschen///////////
+    @FXML private Button weaponA;
+    @FXML private Button weaponB;
     
     
     
@@ -52,7 +57,7 @@ public class FXMLStoryCardController implements Initializable {
         
         case STORYCARD:
                 //Hier wird später aus der Queue entnommen
-                MainStoryCard newCard = new MainStoryCard(null, null, null, null, null, null);
+                MainStoryCard newCard = new MainStoryCard(0, null, null, null, null, null);
                 update(newCard);
                 break;
                 
@@ -78,32 +83,33 @@ public class FXMLStoryCardController implements Initializable {
     
     //Option B wird initialisiert
     @FXML private void handleButtonOptB(ActionEvent event) throws FileNotFoundException {
-    MainStoryCard newCard = new MainStoryCard(null, null, null, null, null, null);
+    MainStoryCard newCard = new MainStoryCard(0, null, null, null, null, null);
     update(newCard);
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Die Paramter des erstellen Objekts "MainStoryCard" werden übergeben, um die Labels und Buttons upzudaten//
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    @FXML public void update(MainStoryCard card){
+    public void update(MainStoryCard card){
         this.labelStoryCardMain.setText(card.getMain());
         this.labelStoryCardSub.setText(card.getSub());
         this.buttonStoryCardOptA.setText(card.getOptA());
         this.buttonStoryCardOptB.setText(card.getOptB());
-        this.labelStoryCardID.setText(card.getId());
-        currentID = Integer.parseInt(card.getId());
+      //  this.labelStoryCardID.setText(String.valueOf(card.getId()));
+        currentID = card.getId();
     }
+    
+   
     
     //Die Events für die jeweiligen IDs der Karten werden hier gehandelt
     //Es wird geguckt, welcher Typ von Karte nach der jetzigen folgt
     public CardsE checkEventsA() throws IOException{ 
         CardsE nextCard = CardsE.STORYCARD; 
         switch(currentID){
-            case 1:
+            case 400:
                 System.out.println(Integer.toString(currentID));
                 return nextIsEncounter(nextCard);
-            case 2:
+            case 300:
                 System.out.println(Integer.toString(currentID));
                 return nextIsStory(nextCard);
             case 3: 
@@ -114,6 +120,9 @@ public class FXMLStoryCardController implements Initializable {
         }
     }
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    //Die Algorithmen der Story Karten sollten vielleicht in die Story Karte Klasse verlagert werden//
+    /////////////////////////////////////////////////////////////////////////////////////////////////
     public CardsE nextIsStory(CardsE nextCard){
         return nextCard = CardsE.STORYCARD;
     }
@@ -140,17 +149,19 @@ public class FXMLStoryCardController implements Initializable {
      //Das passiert, wenn die Szene aufgerufen wird//
      /////Es wird eine neue Story Karte geladen//////
      ////////////////////////////////////////////////
-    @FXML @Override public void initialize(URL url, ResourceBundle rb) {
+ @Override public void initialize(URL url, ResourceBundle rb) {
         
         //Eine neue Karte wird erstellt
-        MainStoryCard newCard = Main.MainStoryCardsHashMap.get("1");
+        MainStoryCard newCard = Main.MainStoryCardsHashMap.get(400);
         //Die ID der Karte wird gespeichert
-        currentID = Integer.parseInt(newCard.getId());
+        currentID = newCard.getId();
         //Die Szenen-Elemente werden mit der neuen Karte aktualisiert
         update(newCard);
         //Für Dokumentation - wird später entfernt (?)
         labelPlayerName.setText(FXMLNameMenuController.player.getName());
 
     }    
+
+  
     
 }
