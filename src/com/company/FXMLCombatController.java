@@ -7,7 +7,6 @@ package com.company;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,13 +41,13 @@ public class FXMLCombatController implements Initializable {
     @FXML private Label combatLabelPlayerCRIT;
     @FXML private Label combatLabelEnemyHP;
     @FXML private Label combatLabelEnemyName;
-    public static EnemyCard enemy = new EnemyCard(300, "Slime", 100,100,2,10,10,5);
+    public static EnemyCard enemy = new EnemyCard("E1", "Slime", 100,100,2,10,10,5);
     static CombatMovesE playermove;
     public static int counter = 0;
     
     //Nodes für den DevMode
     @FXML private TableView<EquipmentCard> godmodeTableview;
-    @FXML private TableColumn<EquipmentCard, Integer> objectIdColumn;
+    @FXML private TableColumn<EquipmentCard, String> objectIdColumn;
     @FXML private TableColumn<EquipmentCard, String> objectNameColumn;
     @FXML private TableColumn<EquipmentCard, SlotsE> objectSlotColumn;
     @FXML private TableColumn<EquipmentCard, Integer> objectAdColumn;
@@ -57,6 +56,18 @@ public class FXMLCombatController implements Initializable {
     @FXML private Button devmodeUnequip;
     @FXML private ImageView enemySprite;
     @FXML private ImageView enemyCardTemplate;
+    @FXML
+    private Label devmodePlayerAD;
+    @FXML
+    private Label devmodePlayerDEF;
+    @FXML
+    private Label devmodePlayerHP;
+    @FXML
+    private Label devmodeEnemyAD;
+    @FXML
+    private Label devmodeEnemyDEF;
+    @FXML
+    private Label devmodeEnemyHP;
 
     
     ////////////////////////////////////
@@ -68,6 +79,8 @@ public class FXMLCombatController implements Initializable {
         playermove = CombatMovesE.ATTACK;
         combat(FXMLNameMenuController.player, enemy);
         combatUpdate(FXMLNameMenuController.player, enemy);
+        if(FXMLNameMenuController.player.getName().equals("withTheBoys")){
+            updateAllStats();}
     }
 
     @FXML private void handleCombatBtnDefend(ActionEvent event) throws IOException {
@@ -81,12 +94,12 @@ public class FXMLCombatController implements Initializable {
     
 
     public void updateAllStats(){
-        Player player = FXMLNameMenuController.player;
-        combatLabelPlayerHP.setText("HP: "+ Integer.toString(player.getHealth()));
-        combatLabelPlayerAD.setText("AD: "+Integer.toString(player.getMaxattack()));
-        combatLabelPlayerDEF.setText("DEF: "+Double.toString(player.getDefence()));
-        combatLabelPlayerCRIT.setText("CRT: "+Integer.toString(player.getCrit()));
-        combatLabelEnemyHP.setText(Integer.toString(enemy.getHealth()));    
+        devmodePlayerHP.setText("Player HP: " + Integer.toString(FXMLNameMenuController.player.getHealth()));
+        devmodePlayerAD.setText("Player AD: " +Integer.toString(FXMLNameMenuController.player.getAttack()));
+        devmodePlayerDEF.setText("Player DEF: " +Double.toString(FXMLNameMenuController.player.getDefence()));
+        devmodeEnemyHP.setText("ENEMY HP: " +Integer.toString(enemy.getHealth()));
+        devmodeEnemyAD.setText("ENEMY AD: " +Integer.toString(enemy.getAttack()));
+        devmodeEnemyDEF.setText("ENEMY DEF: " +Double.toString(enemy.getDefence()));  
     }
  
     
@@ -117,23 +130,40 @@ public class FXMLCombatController implements Initializable {
             labelCombatUpdates.setText("VICTORY");
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLCard.fxml"));
                 combatPane.getChildren().setAll(pane);}
-        //Die Angrifftswerte werden für die nächste Runde zurückgesetzt
-        enemy.setAttack(enemy.getMaxattack());
+            
             FXMLNameMenuController.player.setAttack(FXMLNameMenuController.player.getMaxattack());
+            enemy.setAttack(enemy.getMaxattack());
     }
-
-    //Hier werden die Consumables die momentan verwendet werden gespeichert
-    public static ArrayList<ConsumablesCard> ItemsInUse = new ArrayList<>();
+        
         
         
     public void createDevmode(){
-        //Das Tableview und die Buttons werden angezeigt
+        //Das Tableview und die Buttons werden angezeigt  
         godmodeTableview.setDisable(false);
         godmodeTableview.setVisible(true);
         devmodeEquip.setDisable(false);
         devmodeEquip.setVisible(true);
         devmodeUnequip.setDisable(false);
         devmodeUnequip.setVisible(true);
+        devmodePlayerHP.setDisable(false);
+        devmodePlayerHP.setVisible(true);
+        devmodePlayerAD.setDisable(false);
+        devmodePlayerAD.setVisible(true);
+        devmodePlayerDEF.setDisable(false);
+        devmodePlayerDEF.setVisible(true);
+        devmodeEnemyHP.setDisable(false);
+        devmodeEnemyHP.setVisible(true);
+        devmodeEnemyAD.setDisable(false);
+        devmodeEnemyAD.setVisible(true);
+        devmodeEnemyDEF.setDisable(false);
+        devmodeEnemyDEF.setVisible(true);
+        
+        devmodePlayerHP.setText("Player HP: " + Integer.toString(FXMLNameMenuController.player.getHealth()));
+        devmodePlayerAD.setText("Player AD: " +Integer.toString(FXMLNameMenuController.player.getAttack()));
+        devmodePlayerDEF.setText("Player DEF: " +Double.toString(FXMLNameMenuController.player.getDefence()));
+        devmodeEnemyHP.setText("ENEMY HP: " +Integer.toString(enemy.getHealth()));
+        devmodeEnemyAD.setText("ENEMY AD: " +Integer.toString(enemy.getAttack()));
+        devmodeEnemyDEF.setText("ENEMY DEF: " +Double.toString(enemy.getDefence())); 
         //Die Spalten beziehen sich jeweils auf die Attribute der Story Karte
         objectIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         objectNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -154,11 +184,13 @@ public class FXMLCombatController implements Initializable {
     
     @FXML public void equipDevomode(){
     FXMLNameMenuController.player.getInventory().equip(godmodeTableview.getSelectionModel().getSelectedItem());
+    FXMLNameMenuController.player.setAttack(FXMLNameMenuController.player.getMaxattack());
     updateAllStats();
     }
     
     @FXML private void unequipDevmode(ActionEvent event) {
     FXMLNameMenuController.player.getInventory().unequip(godmodeTableview.getSelectionModel().getSelectedItem());
+    FXMLNameMenuController.player.setAttack(FXMLNameMenuController.player.getMaxattack());
      updateAllStats();
     }
   
@@ -193,7 +225,7 @@ public class FXMLCombatController implements Initializable {
 		doEnemyMove(player, enemy, enemymove); }
     
 	if(playermove.equals(CombatMovesE.ATTACK)) {
-            enemy.setHealth(enemy.getHealth()-player.performAttack());
+            enemy.setHealth(enemy.getHealth()-player.performAttack()); 
            
        } 
         counter++;
@@ -206,5 +238,4 @@ public class FXMLCombatController implements Initializable {
             createDevmode();
         }
         }
-
 }
