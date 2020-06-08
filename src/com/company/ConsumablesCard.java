@@ -11,8 +11,11 @@ public class ConsumablesCard extends ItemCard {
     private int effectDuration;
     private boolean overheal;
 
+
     public ConsumablesCard(String name,int id, int dmg,  int healing, boolean overheal, int effectDuration, double defence){
+
         super(id,name);
+        super.setEnumC(CardsE.CONSUMABLECARD);
         this.dmg= dmg;
         this.healing=healing;
         this.overheal=overheal;
@@ -67,7 +70,7 @@ public class ConsumablesCard extends ItemCard {
        }
        else{
            if(Consumable.defence > 0){defenceCon(enemy.getAttack()/Consumable.defence, enemy);}
-           FXMLCombatController.ItemsInUse.remove(Consumable);}
+           FXMLCombatController.ConsumablesInUse.remove(Consumable);}
 
        --Consumable.effectDuration;
     }

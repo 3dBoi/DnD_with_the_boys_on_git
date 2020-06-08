@@ -13,6 +13,7 @@ public class EquipmentCard extends ItemCard {
 
     public EquipmentCard(String name,int id,int attack, double defence, SlotsE slot, int critAdd) {
         super(id,name);
+        super.setEnumC(CardsE.EQUIPMENTCARD);
         this.attack = attack;
         this.defence = defence;
         this.slot = slot;

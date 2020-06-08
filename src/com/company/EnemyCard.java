@@ -17,6 +17,7 @@ public class EnemyCard extends Card implements Character{
 	public EnemyCard(int id, String name, int health, int maxhealth, double defence, int attack, int maxattack, int crit) {
 
                 super(id, name);
+		super.setEnumC(CardsE.ENCOUNTERCARD);
 		this.health = health;
 		this.maxhealth = maxhealth;
 		this.defence = defence;

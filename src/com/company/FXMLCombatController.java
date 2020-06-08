@@ -7,6 +7,7 @@ package com.company;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +42,7 @@ public class FXMLCombatController implements Initializable {
     @FXML private Label combatLabelPlayerCRIT;
     @FXML private Label combatLabelEnemyHP;
     @FXML private Label combatLabelEnemyName;
-    public static EnemyCard enemy = new EnemyCard("E1", "Slime", 100,100,2,10,10,5);
+    public static EnemyCard enemy = new EnemyCard(1, "Slime", 100,100,2,10,10,5);
     static CombatMovesE playermove;
     public static int counter = 0;
     
@@ -174,12 +175,11 @@ public class FXMLCombatController implements Initializable {
         //Für die Visualisierung der Objekte werden die Items aus der HashMap in eine Observable List transferiert
         ObservableList<EquipmentCard> items = FXCollections.observableArrayList();
         //Hier wird durch die EquipmentCard Map iterated und jedes Item der Observable List hinzugefügt
-        Main.EquipmentCardsHashMap.values().forEach((i) -> {
-            items.add(i);
-        });
+        items.addAll(Main.EquipmentCardsHashMap.values());
       godmodeTableview.setItems(items);
     }
-    
+
+    public static ArrayList<ConsumablesCard> ConsumablesInUse = new ArrayList<>();
     
     
     @FXML public void equipDevomode(){

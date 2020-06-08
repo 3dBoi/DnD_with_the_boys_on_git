@@ -3,56 +3,56 @@
         
     
 	"StoryCards": [
-		{"id": 400,	
+		{"id": 1,	
 		 "name": "Erste Karte",
 		 "main": "Willst du rechts am Fluss entlang oder links?",
 		 "sub": "-w-  TEXT UNTER WARTUNG  -w-",
 		 "optA": "Rechts",
 		 "optB": "Links"},
 			
-		{"id": 401,	
+		{"id": 2,	
 		 "name": "Zweite Karte",
 		 "main": "Willst du mit dem Dorfbewohnern reden?",
 		 "sub": "	凸ಠ益ಠ)凸	",
 		 "optA": "ja",
 		 "optB": "nein"},
 		 
-		 {"id": 402,	
+		 {"id": 3,	
 		  "name": "Dritte Karte",
 		 "main": "Da vorne ist ein Kampf…",
 		 "sub": "YEET, und da fliegt der Kontext",
 		 "optA": "…lauf hin!",
 		 "optB": "…lauf weg!"},
 		 
-		 {"id": 403,	
+		 {"id": 4,	
 		  "name": "Vierte Karte",
 		 "main": "Willst du jetzt zu dem Minotauros gehen?",
 		 "sub": "Gemeinsam sind wir Team Rocket, so schnell wie das Licht! Gebt lieber auf und bekämpft uns nicht! Miauz, genau! Woingenau!",
 		 "optA": "Ja",
 		 "optB": "Nein, später"},
 
-		 {"id": 404,	
+		 {"id": 5,	
 		  "name": "Fünfte Karte",
 		 "main": "Willst du die Herausforderung annehmen?",
 		 "sub": "Das war mal wieder ein Schuss in den Ofen",
 		 "optA": "Klar",
 		 "optB": "Lieber nicht!"},
 
-		{"id": 405,	
+		{"id": 6,	
 		  "name": "Sechste Karte",
 		 "main": "Einer der Götter will dich sprechen…",
 		 "sub": "Das war mal wieder ein Schuss in den Ofen",
 		 "optA": "Ich gehe hin!",
 		 "optB": "Ich gehe nicht hin!"},
 
-		{"id": 406,	
+		{"id": 7,	
 		  "name": "Siebte Karte",
 		 "main": "Wen willst du bekämpfen?",
 		 "sub": "Du kriegst auch Donuts als Belohnung wenn du siegst",
 		 "optA": "Den Minotauros.",
 		 "optB": "Medusa."},
 
-		{"id": 407,	
+		{"id": 8,	
 		  "name": "Achte Karte",
 		 "main": "Willst du kämpfen?",
 		 "sub": "UwU oder OwO, was ist dein Still  >W<.",
@@ -62,45 +62,45 @@
 
         
         "Items": [
-        {"name": "Dagger",          "id": 100,     "attack": 5,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
-	{"name": "Rusty Helmet",    "id": 101,     "attack": 0,	"defence":5.0,      "slot":  "HEAD",         "critAdd": 0},
-        {"name": "Club",            "id": 102,     "attack": 8, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 3},
-        {"name": "Mace",            "id": 103,     "attack": 11,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
-        {"name": "Sword",           "id": 104,     "attack": 14, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 4},
-        {"name": "Spear",           "id": 105,     "attack": 18,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 7},
-        {"name": "Axe",             "id": 106,     "attack": 21, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
-        {"name": "Warhammer",       "id": 107,     "attack": 25, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 8}
+        {"name": "Dagger",          "id": 1,     	"attack": 5,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
+	{"name": "Rusty Helmet",    "id": 2,     	"attack": 0,	"defence":5.0,      "slot":  "HEAD",    "critAdd": 0},
+        {"name": "Club",            "id": 3,     	"attack": 8, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 3},
+        {"name": "Mace",            "id": 4,    	"attack": 11,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
+        {"name": "Sword",           "id": 5,     	"attack": 14, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 4},
+        {"name": "Spear",           "id": 6,     	"attack": 18,	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 7},
+        {"name": "Axe",             "id": 7,     	"attack": 21, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 5},
+        {"name": "Warhammer",       "id": 8,     	"attack": 25, 	"defence":0.0,      "slot":  "WEAPON",	"critAdd": 8}
     ],
 	
 
 	 "Consumables":[
-	{"name": "healthPotion",            "id": 200,     "dmg": 0,	"heal": 20, 	"overheal": false,	"effectDuration": 1, 	"defence":0.0},
-	{"name": "healthPotion++",          "id": 201,     "dmg": 0,	"heal": 50,	"overheal": true,	"effectDuration": 1,	"defence":0.0},
-	{"name": "greek fire",              "id": 202,     "dmg": 8,	"heal": 0,	"overheal": false,	"effectDuration": 4,	"defence":0.0},
-	{"name": "littleBOOM",              "id": 203,     "dmg": 8,	"heal": 0,	"overheal": false,	"effectDuration": 1,	"defence":0.0},
-	{"name": "spell of P",              "id": 204,     "dmg": 0,	"heal": 0,	"overheal": false,	"effectDuration": 1,	"defence":0.5},
-	{"name": "spell of pow",            "id": 205,     "dmg": 0,	"heal": 0,	"overheal": false,	"effectDuration": 4,	"defence":0.5},
-	{"name": "ONE for All",             "id": 206,     "dmg": 5,	"heal": 5,	"overheal": true,	"effectDuration": 3,	"defence":0.25}
+	{"name": "healthPotion",            "id": 1,     "dmg": 0,	"heal": 20, 	"overheal": false,	"effectDuration": 1, 	"defence":0.0},
+	{"name": "healthPotion++",          "id": 2,     "dmg": 0,	"heal": 50,	"overheal": true,	"effectDuration": 1,	"defence":0.0},
+	{"name": "greek fire",              "id": 3,     "dmg": 8,	"heal": 0,	"overheal": false,	"effectDuration": 4,	"defence":0.0},
+	{"name": "littleBOOM",              "id": 4,     "dmg": 8,	"heal": 0,	"overheal": false,	"effectDuration": 1,	"defence":0.0},
+	{"name": "spell of P",              "id": 5,     "dmg": 0,	"heal": 0,	"overheal": false,	"effectDuration": 1,	"defence":0.5},
+	{"name": "spell of pow",            "id": 6,     "dmg": 0,	"heal": 0,	"overheal": false,	"effectDuration": 4,	"defence":0.5},
+	{"name": "ONE for All",             "id": 7,     "dmg": 5,	"heal": 5,	"overheal": true,	"effectDuration": 3,	"defence":0.25}
    ],
 
 
     
     	"EnemyCards": [
-	{"id": 300,	"name": "Slime",	"health": 50,	"maxhealth": 50,	"defence": 0.0,		"attack": 5,	"maxattack": 5,		"crit": 0},
+	{"id": 1,	"name": "Slime",	"health": 50,	"maxhealth": 50,	"defence": 0.0,		"attack": 5,	"maxattack": 5,		"crit": 0},
                  	
-	{"id": 301,	"name": "Skeleton",	"health": 75,	"maxhealth": 75,	"defence": 2.0,		"attack": 6,	"maxattack": 6,		"crit": 2},
+	{"id": 2,	"name": "Skeleton",	"health": 75,	"maxhealth": 75,	"defence": 2.0,		"attack": 6,	"maxattack": 6,		"crit": 2},
 		
-	{"id": 302,	"name": "Harpyie",	"health": 50,	"maxhealth": 50,	"defence": 0.0,		"attack": 13,	"maxattack": 13,	"crit": 3},
+	{"id": 3,	"name": "Harpyie",	"health": 50,	"maxhealth": 50,	"defence": 0.0,		"attack": 13,	"maxattack": 13,	"crit": 3},
 
-	{"id": 303,	"name": "Kentaur",	"health": 75,	"maxhealth": 75,	"defence": 0.0,		"attack": 9,	"maxattack": 9,	 	"crit": 2},	
+	{"id": 4,	"name": "Kentaur",	"health": 75,	"maxhealth": 75,	"defence": 0.0,		"attack": 9,	"maxattack": 9,	 	"crit": 2},	
 	
-	{"id": 304,	"name": "Sphinx",	"health": 150,	"maxhealth": 175,	"defence": 3.0,		"attack": 10,	"maxattack": 10,	"crit": 5},
+	{"id": 5,	"name": "Sphinx",	"health": 150,	"maxhealth": 175,	"defence": 3.0,		"attack": 10,	"maxattack": 10,	"crit": 5},
 	
-	{"id": 305,	"name": "Hydra",	"health": 999,	"maxhealth": 999,	"defence": 2.0,		"attack": 26,	"maxattack": 26,	"crit": 20},
+	{"id": 6,	"name": "Hydra",	"health": 999,	"maxhealth": 999,	"defence": 2.0,		"attack": 26,	"maxattack": 26,	"crit": 20},
 	
-	{"id": 306,	"name": "Medusa",	"health": 80,	"maxhealth": 80,	"defence": 0.0,		"attack": 26,	"maxattack": 26,	"crit": 20},	
+	{"id": 7,	"name": "Medusa",	"health": 80,	"maxhealth": 80,	"defence": 0.0,		"attack": 26,	"maxattack": 26,	"crit": 20},	
 	
-	{"id": 307,	"name": "Minotaurus",	"health": 300,	"maxhealth": 300,	"defence": 4.0,		"attack": 30,	"maxattack": 30,	"crit": 15}
+	{"id": 8,	"name": "Minotaurus",	"health": 300,	"maxhealth": 300,	"defence": 4.0,		"attack": 30,	"maxattack": 30,	"crit": 15}
 		 
     ]
 

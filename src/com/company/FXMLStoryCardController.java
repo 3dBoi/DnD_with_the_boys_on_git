@@ -125,7 +125,7 @@ public class FXMLStoryCardController implements Initializable {
     public CardsE checkEventsA() throws IOException{
         CardsE nextCard = CardsE.STORYCARD;
         switch(currentID){
-            case 400:
+            case 1:
                 System.out.println(Integer.toString(currentID));
                 return nextIsEncounter(nextCard);
             case 300:
@@ -141,7 +141,7 @@ public class FXMLStoryCardController implements Initializable {
     public CardsE checkEventsB() throws IOException{
         CardsE nextCard = CardsE.STORYCARD;
         switch(currentID){
-            case 400:
+            case 1:
                 System.out.println(currentID);
                 return nextIsItem(nextCard);
             case 2:
@@ -180,7 +180,7 @@ public class FXMLStoryCardController implements Initializable {
  @Override public void initialize(URL url, ResourceBundle rb) {
         
         //Eine neue Karte wird erstellt
-        MainStoryCard newCard = Main.MainStoryCardsHashMap.get(400);
+        MainStoryCard newCard = Main.MainStoryCardsHashMap.get(1);
         //Die ID der Karte wird gespeichert
         currentID = newCard.getId();
         //Die Szenen-Elemente werden mit der neuen Karte aktualisiert

@@ -14,6 +14,7 @@ public class MainStoryCard extends Card {
     //Konstruktor
      public MainStoryCard(int id, String name, String main, String sub, String optA, String optB) {
         super(id, name);
+         super.setEnumC(CardsE.STORYCARD);
         this.main = main;
         this.sub=sub;
         this.optA =optA;
