@@ -34,8 +34,8 @@ public class FXMLItemCardController implements Initializable {
      * @param rb
      */
     @Override public void initialize(URL url, ResourceBundle rb) {
-        itemcard = Main.EquipmentCardsHashMap.get(100);
-        create(Main.EquipmentCardsHashMap.get(100));
+        itemcard = Main.EquipmentCardsHashMap.get(1);
+        create(Main.EquipmentCardsHashMap.get(1));
         // TODO
     }
 

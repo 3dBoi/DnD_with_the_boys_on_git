@@ -81,5 +81,11 @@
             </Label>
          </children>
       </StackPane>
+      <Label fx:id="devmodePlayerAD" disable="true" layoutX="67.0" layoutY="78.0" prefHeight="30.0" prefWidth="118.0" text="PLAYER AD: " visible="false" />
+      <Label fx:id="devmodePlayerDEF" disable="true" layoutX="67.0" layoutY="131.0" prefHeight="30.0" prefWidth="107.0" text="PLAYER DEF:" visible="false" />
+      <Label fx:id="devmodePlayerHP" disable="true" layoutX="67.0" layoutY="190.0" prefHeight="30.0" prefWidth="94.0" text="PLAYER HP:" visible="false" />
+      <Label fx:id="devmodeEnemyAD" disable="true" layoutX="194.0" layoutY="75.0" prefHeight="30.0" prefWidth="118.0" text="PLAYER AD: " visible="false" />
+      <Label fx:id="devmodeEnemyDEF" disable="true" layoutX="194.0" layoutY="128.0" prefHeight="30.0" prefWidth="107.0" text="PLAYER DEF:" visible="false" />
+      <Label fx:id="devmodeEnemyHP" disable="true" layoutX="194.0" layoutY="187.0" prefHeight="30.0" prefWidth="94.0" text="PLAYER HP:" visible="false" />
    </children>
 </AnchorPane>

@@ -21,6 +21,8 @@ import org.json.JSONTokener;
 
 
 public class Main extends Application {
+
+    public static LoadHashmaps bob = new LoadHashmaps();
     
         /////////////////////////////////////////////////////////////////////////////////////////   
         //Die drei HashMaps sollten vielleicht in eine eigene Loading-Klasse verschoben werden?//
@@ -86,8 +88,8 @@ public class Main extends Application {
             }
 
             //Hier werden Consumables Karten eingelesen
-            JSONArray consumables = storyCardObject.getJSONArray("Items");
-            for (Object o: equipment) {
+            JSONArray consumables = storyCardObject.getJSONArray("Consumables");
+            for (Object o: consumables) {
                 JSONObject json = (JSONObject) o;
                 ConsumableCardsHashMap.put((int) json.get("id"), new ConsumablesCard((String) json.get("name"), (int)json.get ("id"), (int) json.get("dmg"), (int) json.get("heal"), (boolean) json.get("overheal"), (int) json.get("effectDuration"), (double) json.get("defence")));
             }
